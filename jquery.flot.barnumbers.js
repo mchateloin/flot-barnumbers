@@ -34,6 +34,10 @@
             numbers.yAlign = numbers.yAlign || function(y){ return y / 2; };
             numbers.horizontalShift = 1;
         }
+        
+        if (typeof options.series.bars.numbers.formatter !== "function") {
+            options.series.bars.numbers.formatter = function(v) { return v };
+        }
     }
 
     function draw(plot, ctx){
@@ -69,7 +73,8 @@
                         text = points[barNumber];
                     }
                     var c = plot.p2c(point);
-                    ctx.fillText(text.toString(10), c.left + offset.left, c.top + offset.top)
+                    var label = series.bars.numbers.formatter(text.toString(10));
+                    ctx.fillText(label, c.left + offset.left, c.top + offset.top);
                 }
             }
         });
