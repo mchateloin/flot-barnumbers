@@ -22,13 +22,13 @@ The below will continue to work for now to prevent breaking of existing code
         }
     }
 
-There are 2 other additional options
+Options for positioning
 
     series: {
         bars: {
             numbers: {
-                xAlign : function or number,
-                yAlign : function or number,
+                xAlign: function or number,
+                yAlign: function or number,
             }
         }
     }
@@ -38,6 +38,29 @@ specify a function or a number to override this behaviour. If you have a
 horizontal bar chart, these 2 functions will switch round the axes they
 are working on.
 
+Formatting the number
+
+    series: {
+        bars: {
+            numbers: {
+                formatter: function,
+            }
+        }
+    }
+
+You can pass in a function that taking the first argument as the original number that would have been displayed. You can then manipulate it however you wish and return it.  Example:
+
+```
+    series: {
+        bars: {
+            numbers: {
+                formatter: function(v) {
+                    return Math.ceil(v) + "%";
+                },
+            }
+        }
+    }
+```
 
 Todo
 ====
