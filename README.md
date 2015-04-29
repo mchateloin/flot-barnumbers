@@ -22,7 +22,7 @@ The below will continue to work for now to prevent breaking of existing code
         }
     }
 
-Options for positioning
+## Options for positioning
 
     series: {
         bars: {
@@ -38,7 +38,7 @@ specify a function or a number to override this behaviour. If you have a
 horizontal bar chart, these 2 functions will switch round the axes they
 are working on.
 
-Formatting the number
+## Formatting the numbers
 
     series: {
         bars: {
